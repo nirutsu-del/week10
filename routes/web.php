@@ -31,5 +31,7 @@ Route::get('/test-db', function () {
 });
 
 
-Route::get('/delete/{id}', [AdminController::class, 'delete']);
-route::get('change/{id}',[AdminController::class,'change']);
+Route::get('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
+route::get('change/{id}',[AdminController::class,'change'])->name('change');
+route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
+route::post('update/{id}',[AdminController::class,'update'])->name('update');
