@@ -19,9 +19,9 @@
       {{-- <td>{{ Str::limit ($item ->content , 20)}}</td> --}}
       <td>
          @if ($item -> status )
-          <span class="btn btn-success">สถานะ : เผยแพร่</span> 
+         <a href="/change/{{$item->id}}"><span class="btn btn-success">สถานะ : เผยแพร่</span> </a>
           @else
-          <span class="btn btn-danger">สถานะ : ไม่เผยแพร่</span>
+          <a href="/change/{{$item->id}}"><span class="btn btn-danger">สถานะ : ไม่เผยแพร่</span> </a>
           @endif  
       </td>
       <td>

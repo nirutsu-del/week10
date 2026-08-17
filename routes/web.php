@@ -31,5 +31,5 @@ Route::get('/test-db', function () {
 });
 
 
-Route::get('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
- 
+Route::get('/delete/{id}', [AdminController::class, 'delete']);
+route::get('change/{id}',[AdminController::class,'change']);

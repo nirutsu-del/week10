@@ -12,9 +12,6 @@ class AdminController extends Controller
  
     return view ('blogs',compact ('blogs'));
 }
-
-
-
 function abouts(){
     $name ="suthiphong";
     $data = "6 กรกฏาคม 2569";
@@ -41,14 +38,21 @@ function insert(Request $request)
    "title"   => $request->title,
     "content" => $request->content,
  ];
+
+ 
  DB::table('blogs')->insert($data);
  return redirect('/blogs');
 }
-
-
 function delete($id){
 DB::table('blogs')->where('id', $id)->delete();
 return redirect()->back();
 }
-
+function change($id){
+    $blog = DB::table('blogs')->where('id',$id)->first();
+    $data=[
+        'status' => !$blog->status,
+    ];
+    DB::table('blogs')->where('id',$id)->update($data);
+    return redirect('/blogs');
+}   
 }
